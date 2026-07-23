@@ -28,7 +28,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -46,7 +46,7 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -86,6 +86,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SelectGem1",
+                    "type": "Button",
+                    "id": "965b0290-029c-4ba7-8bb0-8f29ceac777b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "441b28fa-8b76-4c70-baa4-ff3d1575e70d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "cdbf0a44-d56f-48a1-be2a-015e06b8d041",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -471,6 +498,72 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b531582-dbb0-4b9e-b074-3e08f1c8a9b8",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SelectGem1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a23fbd5-0481-4eb5-9143-396cb82ac672",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb613d3d-1c3a-4bbd-99fa-f9fb664fb64b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "227635e5-6b60-4351-9c1b-3a3918c34562",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a888f28a-3c72-40a6-9cf2-5a0e6cef2fdd",
+                    "path": "<Touchscreen>/touch*/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae332e1b-d94b-4027-867f-e258f6cd4490",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

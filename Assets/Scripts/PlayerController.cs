@@ -4,30 +4,38 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D),typeof(Collider2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("balancing parameters")]
-    [Range(0,1000),Tooltip("force applied when jumping")]
-    public float JumpAcceleration = 20.0f;
-    [Range(0, 1000), Tooltip("force applied when jumping")]
-    public float MoveAcceleration = 20.0f;
-    [Tooltip("Stub. To be used to prevent jump-stacking")]
-    public bool IsGrounded = false;
+    [Header("Current status")]
+    [SerializeField, Tooltip("Uused to prevent jump-stacking")]
+    private bool IsGrounded = false;
 
+    [Header("Balancing parameters")]
+    [Range(0,100),Tooltip("force applied when jumping")]
+    public float JumpAcceleration = 20.0f;
+    [Range(500, 2000), Tooltip("force applied when jumping")]
+    public float MoveAcceleration = 20.0f;
+
+
+    //Input handling//////////////////////////
     public InputActionAsset InputActions;
     private InputAction InputActionMove;
     private InputAction InputActionJump;
+    private InputAction InputActionSelectGemExplosive;
     [SerializeField, Tooltip("TBA")]
     private Vector2 RawMoveInput;
     public float RawJumpInput;
 
 
-    [Header("cached components")]
+    [Header("Cached components")]
     [SerializeField, Tooltip("Stub. To be used to prevent jump-stacking")]
     private Rigidbody2D Rigidbody;
-    [SerializeField, Tooltip("Stub. To be used for collisionChecking")]
-    private Collider2D BodyCollider;
-
-    [SerializeField, Tooltip("Stub. To be used for collecting minerals")]
+    [SerializeField, Tooltip("Stub. To be used for ensuring player doesn't jump mid-air")]
     private ProximitySensor GroundChecker;
+
+    [Header("Prefabs")]
+    [SerializeField, Tooltip("DEBUG; used for spawning for testing")]
+    private GameObject PrefabGemExplosive;
+    [SerializeField, Tooltip("DEBUG; used for spawning for testing")]
+    private Transform GemSpawnLocation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +45,7 @@ public class PlayerController : MonoBehaviour
         //fetch new move sys input actions
         InputActionMove = InputSystem.actions.FindAction("Move");
         InputActionJump = InputSystem.actions.FindAction("Jump");
+        InputActionSelectGemExplosive = InputSystem.actions.FindAction("SelectGem1");
     }
 
     private void OnEnable()
@@ -53,6 +62,7 @@ public class PlayerController : MonoBehaviour
     void Update()//Fixed
     {
         InputToMovement();
+        InputToGemSelect();
     }
 
 
@@ -80,5 +90,14 @@ public class PlayerController : MonoBehaviour
         {
             Rigidbody.AddForce(Vector2.right * MoveAcceleration * Time.deltaTime);
         }
+    }
+
+    void InputToGemSelect() 
+    {
+        if (InputActionSelectGemExplosive.WasPressedThisDynamicUpdate()) 
+        {
+            Instantiate(PrefabGemExplosive, GemSpawnLocation.position, Quaternion.identity);
+        }
+
     }
 }
