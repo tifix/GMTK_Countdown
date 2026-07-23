@@ -30,18 +30,15 @@ public class GemAbstract : MonoBehaviour
 
         if (InputActionClick.WasPressedThisFrame() )
         {
-            Debug.Log("click registered");
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.down);
             if(Collider.bounds.Contains(hit.point))
             {
-                Debug.Log("click within bounds of "+name);
                 isDragged = true;
             }
             return;
         }
         if (InputActionClick.WasCompletedThisFrame() && isDragged) 
         {
-            Debug.Log("click ending");
             isDragged = false;
         }
         if (isDragged) 

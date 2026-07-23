@@ -1,6 +1,8 @@
+using Assets;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GemExplosive : GemAbstract
 {
@@ -14,6 +16,10 @@ public class GemExplosive : GemAbstract
     public float delayBeforeDespawn = 2f;
     public ParticleSystem ParticlesCollision;
     public CinemachineImpulseSource CamShake;
+
+    public GameObject GemPrefabA;
+    public GameObject GemPrefabB;
+    public GameObject GemPrefabC;
 
     public override void Awake()
     {
@@ -52,7 +58,36 @@ public class GemExplosive : GemAbstract
         foreach (Collider2D ObjectHit in HitsInRadius)
         {
             //Break blocks
-            //TODO
+            if(ObjectHit is TilemapCollider2D) 
+            {
+                Tilemap TileMap = ObjectHit.GetComponent<Tilemap>();
+                TilemapGen MapData = ObjectHit.GetComponent<TilemapGen>();
+                GridLayout gridLayout = ObjectHit.GetComponentInParent<GridLayout>();
+
+                //create a bounds struct to check within - TODO: update to circle not square checker
+                var cellBounds = new BoundsInt(
+                gridLayout.WorldToCell(transform.position),Vector3Int.one * Mathf.FloorToInt(explosionRadius));
+
+                //check all tiles within the bounds
+                foreach (var cell in cellBounds.allPositionsWithin)
+                {
+                    if (TileMap.HasTile(cell))
+                    {
+                        //get tile data, check if it's special, if it is, spawn a gem from prefab       || tileDestroyed == MapData.gemTile2 || tileDestroyed == MapData.gemGemTile
+                        TileBase tileDestroyed = TileMap.GetTile(cell);
+                        Debug.Log("cell of type "+ tileDestroyed.name+ " exploded!");
+                        foreach(var TilePrefab in MapData.TileDictionary) 
+                        {
+                            if(tileDestroyed == TilePrefab.TileData && TilePrefab.SpawnOnDestroyed != null) 
+                            {
+                                Instantiate(TilePrefab.SpawnOnDestroyed, gridLayout.CellToWorld(cell), Quaternion.identity);
+                            }
+                        }
+
+                        TileMap.SetTile(cell, null);
+                    }
+                }                
+            }
 
             //trigger other gems
             GemExplosive OutOtherGem;

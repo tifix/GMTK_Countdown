@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 5524821385154778998}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -635,16 +635,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c63e3c20c4ecd24ba818354e53bd1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  IsGrounded: 0
   JumpAcceleration: 20
   MoveAcceleration: 1000
-  IsGrounded: 0
   InputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   RawMoveInput: {x: 0, y: 0}
   RawJumpInput: 0
-  Rigidbody: {fileID: 0}
+  Rigidbody: {fileID: 4658325245678366898}
   GroundChecker: {fileID: 963055563059344326}
-  PrefabGemExplosive: {fileID: 0}
-  GemSpawnLocation: {fileID: 0}
+  PrefabGemExplosive: {fileID: 8307852189830910952, guid: 833ccb9a519d928438d1bca46d7b8c6a, type: 3}
+  GemSpawnLocation: {fileID: 7355683851436560398}
 --- !u!50 &4658325245678366898
 Rigidbody2D:
   serializedVersion: 5

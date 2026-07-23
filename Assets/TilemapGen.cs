@@ -5,10 +5,17 @@ using System;
 using UnityEngine.Tilemaps;
 using Assets;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 
 public class TilemapGen : MonoBehaviour
 {
+    //way to organise tiles, fetch them. Like a dictionary but not necessarily limited to key-value pairs
+    [System.Serializable]
+    public struct DictEntry { public TileType name; public TileBase TileData; public GameObject SpawnOnDestroyed; }
+    public enum TileType{ plain, gemExplosive, gemUpload, gemReveal, gemDash}
+    public DictEntry[] TileDictionary = new DictEntry[5];
+
 
     public GameObject debugSprite;
     public TileBase tileBase;
@@ -19,6 +26,7 @@ public class TilemapGen : MonoBehaviour
     private Tilemap tilemap;
 
     private Map map;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
