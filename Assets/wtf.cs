@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class wtf : MonoBehaviour
 {
     private Texture2D texture;
-    public float scale = 0.5f;
+    public float scale = 0.11f;
+    public float scale2 = 0.5f;
     public float cutoff = 0.5f;
 
     public float a = 3;
@@ -39,7 +40,8 @@ public class wtf : MonoBehaviour
                 float dist = Mathf.Sqrt(xDist * xDist + yDist * yDist);
                 float distMod = Mathf.Pow(dist / 50, a) * b - c;
 
-                map[x + height * y] = Mathf.PerlinNoise(x * scale, y * scale) + distMod;
+                map[x + height * y] =  Mathf.PerlinNoise(x * scale, y * scale); // + distMod;
+                map[x + height * y] += Mathf.PerlinNoise((x + 999999) * scale2, (y + 333333) * scale2);
             }
         }
 
