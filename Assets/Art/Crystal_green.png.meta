@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 5ad7b12b0c4c39748be8223fa884dec7
+guid: f1847c2bb59668549829f979872ce16e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2035335089787377060
-    second: Crystal_sprites_0
+      213: -7523515402237349997
+    second: Crystal_green_0
   - first:
-      213: 6969021836542018100
-    second: Crystal_sprites_1
+      213: 6160559686904996107
+    second: Crystal_green_1
   - first:
-      213: -3754986300037498060
-    second: Crystal_sprites_2
+      213: 3918706304310383337
+    second: Crystal_green_2
   - first:
-      213: -3943742352206219492
-    second: Crystal_sprites_3
+      213: 3595188058116094735
+    second: Crystal_green_3
   - first:
-      213: 5187798999637969492
-    second: Crystal_sprites_4
+      213: 3486966605276588762
+    second: Crystal_green_4
   - first:
-      213: 1041766624720799891
-    second: Crystal_sprites_5
+      213: 7885093650588378634
+    second: Crystal_green_5
   - first:
-      213: -617999591701071997
-    second: Crystal_sprites_6
+      213: 3188457736561350248
+    second: Crystal_green_6
   - first:
-      213: -2848320970651108569
-    second: Crystal_sprites_7
+      213: -7315771903350414878
+    second: Crystal_green_7
   - first:
-      213: 9131496414074472475
-    second: Crystal_sprites_8
+      213: 307090091800221650
+    second: Crystal_green_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -137,12 +137,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crystal_GroundA
+      name: Crystal_green_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 4
         y: 48
-        width: 14
+        width: 12
         height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5ae55ef48901c3e0800000000000000
-      internalID: -2035335089787377060
+      spriteID: 39f667b5a9a179790800000000000000
+      internalID: -7523515402237349997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundB
+      name: Crystal_green_1
       rect:
         serializedVersion: 2
         x: 18
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4320707df60f6b060800000000000000
-      internalID: 6969021836542018100
+      spriteID: b01609b2564be7550800000000000000
+      internalID: 6160559686904996107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_TerrainA
+      name: Crystal_green_2
       rect:
         serializedVersion: 2
         x: 32
@@ -196,19 +196,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43b7ec9dadb93ebc0800000000000000
-      internalID: -3754986300037498060
+      spriteID: 9e2118f1f9a026630800000000000000
+      internalID: 3918706304310383337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundC
+      name: Crystal_green_3
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 32
-        width: 15
+        width: 14
         height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c17b51bb9330549c0800000000000000
-      internalID: -3943742352206219492
+      spriteID: f0b7cb0ad7ca4e130800000000000000
+      internalID: 3595188058116094735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundD
+      name: Crystal_green_4
       rect:
         serializedVersion: 2
         x: 18
@@ -240,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45a4c8b34b3cef740800000000000000
-      internalID: 5187798999637969492
+      spriteID: ada292b17a1346030800000000000000
+      internalID: 3486966605276588762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundE
+      name: Crystal_green_5
       rect:
         serializedVersion: 2
         x: 3
@@ -262,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3984755c939157e00800000000000000
-      internalID: 1041766624720799891
+      spriteID: a062200f5ea7d6d60800000000000000
+      internalID: 7885093650588378634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundF
+      name: Crystal_green_6
       rect:
         serializedVersion: 2
         x: 18
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 387325945ac6c67f0800000000000000
-      internalID: -617999591701071997
+      spriteID: 866d5111b6daf3c20800000000000000
+      internalID: 3188457736561350248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundG
+      name: Crystal_green_7
       rect:
         serializedVersion: 2
         x: 1
@@ -306,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72b7b021b2bb878d0800000000000000
-      internalID: -2848320970651108569
+      spriteID: 2e1e30be638297a90800000000000000
+      internalID: -7315771903350414878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_GroundH
+      name: Crystal_green_8
       rect:
         serializedVersion: 2
         x: 18
@@ -328,124 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1889ac9b9799be70800000000000000
-      internalID: 9131496414074472475
+      spriteID: 2d75bcbbfc0034400800000000000000
+      internalID: 307090091800221650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrystalLooseA
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 34
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aae4d5156bca61646a4ebe3906ff15a7
-      internalID: -1171616678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrystalLooseB
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 32
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c12bcf6da83cf1549bd2aa102bf9cd42
-      internalID: 1941747993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crystal_TerrainA_Highlight
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd2303ea931a03442956a006ef541aba
-      internalID: 1637240409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrystalLooseA_Highlight
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 2
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cb21a4d72a5aa34c9ea8cafddae8d04
-      internalID: -389031273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrystalLooseB_Highlight
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 12
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83e1d69d2b12c714c978dabeabfc7acf
-      internalID: -396921764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crystal_TerrainB
+      name: Crystal_green_9
       rect:
         serializedVersion: 2
         x: 48
@@ -453,21 +343,43 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a8f1edf11000b459ad3e853df873b2
-      internalID: -2108153199
+      spriteID: 75688bda3cb84054b8671a0ea238e9e3
+      internalID: 1450509581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_TerrainB_Highlight
+      name: Crystal_green_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ece7501f3daa4342b89313c3c3ff4d0
+      internalID: -98642906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_green_11
       rect:
         serializedVersion: 2
         x: 48
@@ -482,8 +394,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d79d75ea67f02d418faa2714273c1b1
-      internalID: 1780482123
+      spriteID: 31d0a0da40550864993a28c310623265
+      internalID: -44144777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_green_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 34
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6562dc24a400a144aae2585673253625
+      internalID: -1214130207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_green_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccfa6499c43abd7479e6e633bff7022f
+      internalID: -1614589984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_green_14
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a26b4d2cad7bdf48bf9a8336727650e
+      internalID: 1972334273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_green_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da5d796fadbcb34c9f6c9e7dea09109
+      internalID: 689841573
       vertices: []
       indices: 
       edges: []
@@ -492,7 +492,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d173efc7e119e0d47a9956ce026c7d31
+    spriteID: 34e6c0cffd234bc47aac74744f9428c3
     internalID: 0
     vertices: []
     indices: 
@@ -502,22 +502,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CrystalLooseA: -1171616678
-      CrystalLooseA_Highlight: -389031273
-      CrystalLooseB: 1941747993
-      CrystalLooseB_Highlight: -396921764
-      Crystal_GroundA: -2035335089787377060
-      Crystal_GroundB: 6969021836542018100
-      Crystal_GroundC: -3943742352206219492
-      Crystal_GroundD: 5187798999637969492
-      Crystal_GroundE: 1041766624720799891
-      Crystal_GroundF: -617999591701071997
-      Crystal_GroundG: -2848320970651108569
-      Crystal_GroundH: 9131496414074472475
-      Crystal_TerrainA: -3754986300037498060
-      Crystal_TerrainA_Highlight: 1637240409
-      Crystal_TerrainB: -2108153199
-      Crystal_TerrainB_Highlight: 1780482123
+      Crystal_green_0: -7523515402237349997
+      Crystal_green_1: 6160559686904996107
+      Crystal_green_10: -98642906
+      Crystal_green_11: -44144777
+      Crystal_green_12: -1214130207
+      Crystal_green_13: -1614589984
+      Crystal_green_14: 1972334273
+      Crystal_green_15: 689841573
+      Crystal_green_2: 3918706304310383337
+      Crystal_green_3: 3595188058116094735
+      Crystal_green_4: 3486966605276588762
+      Crystal_green_5: 7885093650588378634
+      Crystal_green_6: 3188457736561350248
+      Crystal_green_7: -7315771903350414878
+      Crystal_green_8: 307090091800221650
+      Crystal_green_9: 1450509581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

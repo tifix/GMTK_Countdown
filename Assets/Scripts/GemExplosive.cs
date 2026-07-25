@@ -74,7 +74,7 @@ public class GemExplosive : GemAbstract
                 {
                     if (TileMap.HasTile(cell))
                     {
-                        //get tile data, check if it's special, if it is, spawn a gem from prefab       || tileDestroyed == MapData.gemTile2 || tileDestroyed == MapData.gemGemTile
+                        //get tile data, check if it's special, if it is, spawn a gem from prefab
                         TileBase tileDestroyed = TileMap.GetTile(cell);
                         Debug.Log("cell of type "+ tileDestroyed.name+ " exploded!");
                         foreach(var TilePrefab in MapData.TileDictionary) 

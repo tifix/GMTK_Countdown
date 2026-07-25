@@ -68,43 +68,40 @@ namespace Assets
             return GetTile(x + 1, y) || GetTile(x - 1, y) || GetTile(x, y + 1) || GetTile(x, y - 1);
         }
 
-        public void UpdateTilemap(Tilemap tilemap, TileBase tileBase, TileBase gemTile, TileBase gemTile2, TileBase gemGemTile)
+        public void UpdateTilemap(Tilemap surfaceTilemap, Tilemap gemsTilemap, TileBase tileBase, TileBase gemTile, TileBase gemTile2, TileBase gemGemTile)
         {
-            for (int x = 0; x < width; x++)
+            surfaceTilemap.ClearAllTiles();
+            gemsTilemap.ClearAllTiles();
+
+            int wallDepth = 20;
+
+            for (int x = -wallDepth; x < width + wallDepth; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = -wallDepth; y < height + wallDepth; y++)
                 {
                     if (OnOrBeyondMapEdge(x, y)) {
-                        tilemap.SetTile(new Vector3Int(x, y), tileBase);
-
+                        surfaceTilemap.SetTile(new Vector3Int(x, y), tileBase);
                     }
                     else if (GetTile(x, y))
                     {
+                        surfaceTilemap.SetTile(new Vector3Int(x, y), tileBase);
                         if (UnityEngine.Random.value > 0.95)
                         {
                             if (IsTouchingAir(x, y))
                             {
-                                tilemap.SetTile(new Vector3Int(x, y), gemTile);
+                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTile);
                             }
                             else
                             {
-                                tilemap.SetTile(new Vector3Int(x, y), gemTile2);
+                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTile2);
                             }
-                        }
-                        else
-                        {
-                            tilemap.SetTile(new Vector3Int(x, y), tileBase);
                         }
                     }
                     else
                     {
                         if (IsTouchingGround(x, y) && UnityEngine.Random.value > 0.90)
                         {
-                            tilemap.SetTile(new Vector3Int(x, y), gemGemTile);
-                        }
-                        else
-                        {
-                            tilemap.SetTile(new Vector3Int(x, y), null);
+                            gemsTilemap.SetTile(new Vector3Int(x, y), gemGemTile);
                         }
                     }
                 }

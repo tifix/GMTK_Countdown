@@ -13,7 +13,7 @@ public class TilemapGen : MonoBehaviour
     //way to organise tiles, fetch them. Like a dictionary but not necessarily limited to key-value pairs
     [System.Serializable]
     public struct DictEntry { public TileType name; public TileBase TileData; public GameObject SpawnOnDestroyed; }
-    public enum TileType{ plain, gemExplosive, gemUpload, gemReveal, gemDash}
+    public enum TileType { plain, gemExplosive, gemUpload, gemReveal, gemDash }
     public DictEntry[] TileDictionary = new DictEntry[5];
 
 
@@ -23,7 +23,9 @@ public class TilemapGen : MonoBehaviour
     public TileBase gemTile2;
     public TileBase gemGemTile;
 
-    private Tilemap tilemap;
+    public Tilemap surfaceTilemap;
+    public Tilemap gemsTilemap;
+    public Tilemap backgroundTilemap;
 
     private Map map;
 
@@ -31,23 +33,22 @@ public class TilemapGen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        tilemap = GetComponent<Tilemap>();
-
         BUTT_regenerate();
+        //backgroundTilemap.BoxFill(Vector3Int.zero, background, 0, 0, map.width, map.height);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void BUTT_regenerate() 
+    public void BUTT_regenerate()
     {
         map = new();
         map.Generate(0.11f);
         map.Build();
-        map.UpdateTilemap(tilemap, tileBase, gemTile, gemTile2, gemGemTile);
+        map.UpdateTilemap(surfaceTilemap, gemsTilemap, tileBase, gemTile, gemTile2, gemGemTile);
 
         //Texture2D texture = new(map.width, map.height);
         //for (int x = 0; x < map.width; x++)

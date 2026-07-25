@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Gem Overlay2_0
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 9062259395823601304, guid: d679d7a8b79d6e44ebddc452297e3474, type: 3}
+  m_Sprite: {fileID: -3754986300037498060, guid: 5ad7b12b0c4c39748be8223fa884dec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
