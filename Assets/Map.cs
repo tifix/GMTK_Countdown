@@ -24,7 +24,18 @@ namespace Assets
             {
                 for (int y = 0; y < height; y++)
                 {
-                    weights[x + width * y] = Mathf.PerlinNoise(x * scale + xstart, y * scale + ystart);
+                    //weights[x + width * y] = Mathf.PerlinNoise(x * scale + xstart, y * scale + ystart) * 1;
+
+                    weights[x + width * y] = Mathf.PerlinNoise(x * scale * 0.5f + xstart, y * scale + ystart) * 0.8f;
+                    weights[x + width * y] += Mathf.PerlinNoise(x * scale * 2f + xstart, y * scale * 2.5f + ystart) * 0.2f;
+
+
+                    int distSideX = width / 2 - Math.Abs(x - width / 2);
+                    int distSideY = height / 2 - Math.Abs(y - height / 2);
+                    float distSide = Mathf.Min(distSideY, distSideX);
+                    if (distSide < 20) {
+                        weights[x + width * y] += (20 - distSide) * .6f/20f;
+                    }
                 }
             }
         }
