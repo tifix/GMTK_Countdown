@@ -65,8 +65,9 @@ public class GemExplosive : GemAbstract
                 GridLayout gridLayout = ObjectHit.GetComponentInParent<GridLayout>();
 
                 //create a bounds struct to check within - TODO: update to circle not square checker
+                Vector3 BoundsMiddle = transform.position - Vector3Int.one * Mathf.FloorToInt(explosionRadius / 2);
                 var cellBounds = new BoundsInt(
-                gridLayout.WorldToCell(transform.position),Vector3Int.one * Mathf.FloorToInt(explosionRadius));
+                gridLayout.WorldToCell(BoundsMiddle),Vector3Int.one * Mathf.FloorToInt(explosionRadius));
 
                 //check all tiles within the bounds
                 foreach (var cell in cellBounds.allPositionsWithin)

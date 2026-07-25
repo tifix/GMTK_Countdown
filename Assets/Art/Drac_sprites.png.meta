@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -131,15 +131,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Drac_sprites_0
+      name: DracMove1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 29
+        width: 15
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,15 +153,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_1
+      name: DracMove2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 17
-        height: 26
+        width: 15
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,15 +175,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_2
+      name: DracMove3
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 18
-        height: 29
+        width: 14
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,15 +197,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_3
+      name: DracDown1
       rect:
         serializedVersion: 2
-        x: 47
+        x: 48
         y: 0
-        width: 18
-        height: 26
+        width: 15
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,15 +219,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_4
+      name: DracDown2
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 50
-        height: 29
+        width: 17
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,15 +241,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_5
+      name: Drac_Dash1
       rect:
         serializedVersion: 2
-        x: 111
+        x: 96
         y: 0
-        width: 18
-        height: 29
+        width: 16
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,15 +263,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_sprites_6
+      name: Drac_Dash3
       rect:
         serializedVersion: 2
-        x: 127
+        x: 128
         y: 0
-        width: 17
-        height: 29
+        width: 16
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,11 +284,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DracDown3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5538cf502a0c4c48a75b15ef19da3a4
+      internalID: -690461403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_Dash2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd98b6b6e78ba74b8d5a0eb5924f483
+      internalID: 575941053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9f60fd1b9c0ea4a4da19df92ac274f74
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +342,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Drac_sprites_0: 2801905517198411582
-      Drac_sprites_1: -1200943642401763900
-      Drac_sprites_2: 4017289349974111299
-      Drac_sprites_3: -4745586067114990148
-      Drac_sprites_4: -3389954019302106909
-      Drac_sprites_5: -7493061232689825293
-      Drac_sprites_6: 5854791623510971523
+      DracDown1: -4745586067114990148
+      DracDown2: -3389954019302106909
+      DracDown3: -690461403
+      DracMove1: 2801905517198411582
+      DracMove2: -1200943642401763900
+      DracMove3: 4017289349974111299
+      Drac_Dash1: -7493061232689825293
+      Drac_Dash2: 575941053
+      Drac_Dash3: 5854791623510971523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

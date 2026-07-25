@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,9 +97,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,15 +137,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crystal_sprites_0
+      name: Crystal_GroundA
       rect:
         serializedVersion: 2
-        x: 2
-        y: 47
-        width: 15
-        height: 11
+        x: 3
+        y: 48
+        width: 14
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,15 +159,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_1
+      name: Crystal_GroundB
       rect:
         serializedVersion: 2
-        x: 17
-        y: 47
-        width: 13
-        height: 14
+        x: 18
+        y: 48
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,15 +181,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_2
+      name: Crystal_TerrainA
       rect:
         serializedVersion: 2
-        x: 31
-        y: 0
-        width: 33
-        height: 64
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,15 +203,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_3
+      name: Crystal_GroundC
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 17
-        height: 15
+        x: 1
+        y: 32
+        width: 15
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,15 +225,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_4
+      name: Crystal_GroundD
       rect:
         serializedVersion: 2
-        x: 17
-        y: 31
-        width: 14
-        height: 15
+        x: 18
+        y: 32
+        width: 12
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,15 +247,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_5
+      name: Crystal_GroundE
       rect:
         serializedVersion: 2
-        x: 2
-        y: 15
-        width: 15
-        height: 11
+        x: 3
+        y: 16
+        width: 13
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,15 +269,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_6
+      name: Crystal_GroundF
       rect:
         serializedVersion: 2
-        x: 17
-        y: 15
-        width: 13
-        height: 14
+        x: 18
+        y: 16
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,15 +291,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_7
+      name: Crystal_GroundG
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 17
-        height: 14
+        width: 15
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,15 +313,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystal_sprites_8
+      name: Crystal_GroundH
       rect:
         serializedVersion: 2
-        x: 17
+        x: 18
         y: 0
-        width: 14
-        height: 14
+        width: 12
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,11 +334,165 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CrystalLooseA
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 34
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae4d5156bca61646a4ebe3906ff15a7
+      internalID: -1171616678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalLooseB
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12bcf6da83cf1549bd2aa102bf9cd42
+      internalID: 1941747993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_TerrainA_Highlight
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2303ea931a03442956a006ef541aba
+      internalID: 1637240409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalLooseA_Highlight
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb21a4d72a5aa34c9ea8cafddae8d04
+      internalID: -389031273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalLooseB_Highlight
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e1d69d2b12c714c978dabeabfc7acf
+      internalID: -396921764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_TerrainB
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a8f1edf11000b459ad3e853df873b2
+      internalID: -2108153199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_TerrainB_Highlight
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d79d75ea67f02d418faa2714273c1b1
+      internalID: 1780482123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d173efc7e119e0d47a9956ce026c7d31
     internalID: 0
     vertices: []
     indices: 
@@ -348,15 +502,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Crystal_sprites_0: -2035335089787377060
-      Crystal_sprites_1: 6969021836542018100
-      Crystal_sprites_2: -3754986300037498060
-      Crystal_sprites_3: -3943742352206219492
-      Crystal_sprites_4: 5187798999637969492
-      Crystal_sprites_5: 1041766624720799891
-      Crystal_sprites_6: -617999591701071997
-      Crystal_sprites_7: -2848320970651108569
-      Crystal_sprites_8: 9131496414074472475
+      CrystalLooseA: -1171616678
+      CrystalLooseA_Highlight: -389031273
+      CrystalLooseB: 1941747993
+      CrystalLooseB_Highlight: -396921764
+      Crystal_GroundA: -2035335089787377060
+      Crystal_GroundB: 6969021836542018100
+      Crystal_GroundC: -3943742352206219492
+      Crystal_GroundD: 5187798999637969492
+      Crystal_GroundE: 1041766624720799891
+      Crystal_GroundF: -617999591701071997
+      Crystal_GroundG: -2848320970651108569
+      Crystal_GroundH: 9131496414074472475
+      Crystal_TerrainA: -3754986300037498060
+      Crystal_TerrainA_Highlight: 1637240409
+      Crystal_TerrainB: -2108153199
+      Crystal_TerrainB_Highlight: 1780482123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
