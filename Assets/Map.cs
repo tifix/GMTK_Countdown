@@ -1,9 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Tilemaps;
 
 namespace Assets
 {
+    public enum Direction {South,Noth,West,East}
     internal class Map
     {
         public int width = 200;
@@ -67,8 +69,25 @@ namespace Assets
         {
             return GetTile(x + 1, y) || GetTile(x - 1, y) || GetTile(x, y + 1) || GetTile(x, y - 1);
         }
+        //Returns the direction towards which terrain is present if touching. If there's terrain above this tile, returns north.
+        public Direction GetDirectionGroundTouched(int x, int y)
+        {
+            if (GetTile(x + 1, y))
+            {
+                return Direction.East;
+            }
+            if (GetTile(x - 1, y))
+            {
+                return Direction.West;
+            }
+            if (GetTile(x, y + 1))
+            {
+                return Direction.Noth;
+            }
+            return Direction.South;
+        }
 
-        public void UpdateTilemap(Tilemap surfaceTilemap, Tilemap gemsTilemap, TileBase tileBase, TileBase gemTile, TileBase gemTile2, TileBase gemGemTile)
+        public void UpdateTilemap(Tilemap surfaceTilemap, Tilemap gemsTilemap, TileBase tileBase, TileBase gemTileExplosive, TileBase gemTileUpload, TileBase gemTileSurfaceReveal)
         {
             surfaceTilemap.ClearAllTiles();
             gemsTilemap.ClearAllTiles();
@@ -87,25 +106,70 @@ namespace Assets
                         surfaceTilemap.SetTile(new Vector3Int(x, y), tileBase);
                         if (UnityEngine.Random.value > 0.95)
                         {
+                            //spawn explosive gems at the surface
                             if (IsTouchingAir(x, y))
                             {
-                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTile);
+                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTileExplosive);
                             }
                             else
                             {
-                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTile2);
+                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTileUpload);
                             }
                         }
                     }
                     else
                     {
+                        //if this is an edge, Spawn surface crystal
                         if (IsTouchingGround(x, y) && UnityEngine.Random.value > 0.90)
                         {
-                            gemsTilemap.SetTile(new Vector3Int(x, y), gemGemTile);
+                            //determine how to rotate the crystal so it connects to the ground
+                            var tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 90));
+                            switch (GetDirectionGroundTouched(x, y))
+                            {
+                                //if terrain under, no transform changes needed
+                                case Direction.South:
+                                    {
+                                        tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 0));
+                                        Debug.Log("south");
+                                        break;
+                                    }
+                                //if terrain above, flip vertically
+                                case Direction.Noth:
+                                    {
+                                        tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 180));
+                                        Debug.Log("north");
+                                        break;
+                                    }
+                                //if terrain to the left, rotate
+                                case Direction.West:
+                                    {
+                                        tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, -90));
+                                        Debug.Log("west");
+                                        break;
+                                    }
+                                //if terrain to the left, rotate
+                                case Direction.East:
+                                    {
+                                        tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 90));
+                                        Debug.Log("east");
+                                        break;
+                                    }
+                            }
+
+                            //create the transform struct using the rotations determined
+                            var tileChangeData = new TileChangeData
+                            {
+                                position = new Vector3Int(x, y),
+                                tile = gemTileSurfaceReveal,
+                                color = Color.white,
+                                transform = tileTransform
+                            };
+                            //finally place the tile
+                            gemsTilemap.SetTile(tileChangeData, true);
                         }
-                    }
+                    }      
                 }
             }
         }
-    }
+    }       
 }

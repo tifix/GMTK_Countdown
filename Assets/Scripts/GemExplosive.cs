@@ -17,9 +17,9 @@ public class GemExplosive : GemAbstract
     public ParticleSystem ParticlesCollision;
     public CinemachineImpulseSource CamShake;
 
-    public GameObject GemPrefabA;
-    public GameObject GemPrefabB;
-    public GameObject GemPrefabC;
+    //public GameObject GemPrefabA;
+    //public GameObject GemPrefabB;
+    //public GameObject GemPrefabC;
 
     public override void Awake()
     {
@@ -61,7 +61,7 @@ public class GemExplosive : GemAbstract
             if(ObjectHit is TilemapCollider2D) 
             {
                 Tilemap TileMap = ObjectHit.GetComponent<Tilemap>();
-                TilemapGen MapData = ObjectHit.GetComponent<TilemapGen>();
+                TilemapGen MapData = ObjectHit.transform.parent.GetComponent<TilemapGen>();
                 GridLayout gridLayout = ObjectHit.GetComponentInParent<GridLayout>();
 
                 //create a bounds struct to check within - TODO: update to circle not square checker

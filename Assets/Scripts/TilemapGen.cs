@@ -19,9 +19,9 @@ public class TilemapGen : MonoBehaviour
 
     public GameObject debugSprite;
     public TileBase tileBase;
-    public TileBase gemTile;
-    public TileBase gemTile2;
-    public TileBase gemGemTile;
+    public TileBase gemTileExplosive;
+    public TileBase gemTileUpload;
+    public TileBase gemTileSurfaceReveal;
 
     public Tilemap surfaceTilemap;
     public Tilemap gemsTilemap;
@@ -48,7 +48,7 @@ public class TilemapGen : MonoBehaviour
         map = new();
         map.Generate(0.11f);
         map.Build();
-        map.UpdateTilemap(surfaceTilemap, gemsTilemap, tileBase, gemTile, gemTile2, gemGemTile);
+        map.UpdateTilemap(surfaceTilemap, gemsTilemap, tileBase, gemTileExplosive, gemTileUpload, gemTileSurfaceReveal);
 
         //Texture2D texture = new(map.width, map.height);
         //for (int x = 0; x < map.width; x++)

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Gem Overlay_0
+  m_Name: GemTile_Explosive
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: -3450592668984378794, guid: d483992549e319648b752139effa7803, type: 3}
+  m_Sprite: {fileID: -1258706134, guid: c45bcf654d1c6684ab151686a8486cbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

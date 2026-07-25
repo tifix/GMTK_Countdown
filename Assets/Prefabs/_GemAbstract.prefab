@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7995809842244117564}
   - component: {fileID: 1713632039204501215}
   - component: {fileID: 8374464042102174098}
-  - component: {fileID: 8830922742993606962}
+  - component: {fileID: 2282934934704390654}
   m_Layer: 0
-  m_Name: GemGeneric
+  m_Name: _GemAbstract
   m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.34756, g: 1, b: 0.3443396, a: 1}
+  m_Sprite: {fileID: -4080278737599844964, guid: fe641caf9ae4e8e478233e1000e1b9cb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   mousePos: {x: 0, y: 0}
-  Collider: {fileID: 8830922742993606962}
+  Collider: {fileID: 0}
   Rigidbody: {fileID: 7995809842244117564}
   MouseFollowForce: 1500
   FollowStrengthMultiplier: 0
@@ -278,8 +278,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!58 &8830922742993606962
-CircleCollider2D:
+--- !u!60 &2282934934704390654
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -313,7 +313,26 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 0.9375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.25, y: 0.5}
+      - {x: -0.375, y: 0.375}
+      - {x: -0.375, y: -0.375}
+      - {x: -0.25, y: -0.5}
+      - {x: 0.25, y: -0.5}
+      - {x: 0.375, y: -0.375}
+      - {x: 0.375, y: 0.375}
+      - {x: 0.25, y: 0.5}
+  m_UseDelaunayMesh: 1
 --- !u!1 &8868862019986292053
 GameObject:
   m_ObjectHideFlags: 0
