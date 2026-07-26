@@ -481,6 +481,8 @@ MonoBehaviour:
   surfaceTilemap: {fileID: 838130032}
   gemsTilemap: {fileID: 1373845284}
   backgroundTilemap: {fileID: 1080309104}
+  width: 200
+  height: 500
 --- !u!1 &350149271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,7 +4097,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1072257878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.35, y: 0.25244606}
+  m_AnchorMin: {x: 0.35, y: 0.1}
   m_AnchorMax: {x: 0.65, y: 0.4535798}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -4135,7 +4137,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'WSAD to move
 
-    Space to jump'
+    Space to jump
+
+    Mouse to move gems'
 --- !u!222 &1575424091
 CanvasRenderer:
   m_ObjectHideFlags: 0
