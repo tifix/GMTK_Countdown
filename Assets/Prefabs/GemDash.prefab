@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 234699065416845115}
   - component: {fileID: 7995809842244117564}
   - component: {fileID: 1713632039204501215}
-  - component: {fileID: 8374464042102174098}
   - component: {fileID: 2282934934704390654}
+  - component: {fileID: 6621391381568165679}
   m_Layer: 0
   m_Name: GemDash
   m_TagString: Gem
@@ -183,7 +183,67 @@ MonoBehaviour:
   UseImpactDirection: 0
   ScaleImpactWithMass: 0
   ScaleImpactWithSpeed: 0
---- !u!114 &8374464042102174098
+--- !u!60 &2282934934704390654
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174978147087254119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 0.6875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.06087803, y: 0.33782554}
+      - {x: -0.055773735, y: 0.3377638}
+      - {x: -0.20819381, y: 0.2538941}
+      - {x: -0.3224447, y: 0.07286307}
+      - {x: -0.31626534, y: -0.106977254}
+      - {x: -0.18615294, y: -0.28013238}
+      - {x: -0.06549573, y: -0.34587392}
+      - {x: 0.07405378, y: -0.34004882}
+      - {x: 0.18762828, y: -0.27674437}
+      - {x: 0.27222562, y: -0.15798149}
+      - {x: 0.3164861, y: -0.0916544}
+      - {x: 0.3178749, y: 0.09851301}
+      - {x: 0.19058944, y: 0.27835333}
+  m_UseDelaunayMesh: 1
+--- !u!114 &6621391381568165679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +252,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6174978147087254119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac601c6f53c8d448ad5f3f08e7dff5e, type: 3}
+  m_Script: {fileID: 11500000, guid: f7eef89e17b733c43aa6a8d80ccc4570, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GemAbstract
+  m_EditorClassIdentifier: Assembly-CSharp::GemDash
   ScoreValue: 5
   isDragged: 0
   InputActionClick:
@@ -278,66 +338,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!60 &2282934934704390654
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6174978147087254119}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.625, y: 0.6875}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.06087803, y: 0.33782554}
-      - {x: -0.055773735, y: 0.3377638}
-      - {x: -0.20819381, y: 0.2538941}
-      - {x: -0.3224447, y: 0.07286307}
-      - {x: -0.31626534, y: -0.106977254}
-      - {x: -0.18615294, y: -0.28013238}
-      - {x: -0.06549573, y: -0.34587392}
-      - {x: 0.07405378, y: -0.34004882}
-      - {x: 0.18762828, y: -0.27674437}
-      - {x: 0.27222562, y: -0.15798149}
-      - {x: 0.3164861, y: -0.0916544}
-      - {x: 0.3178749, y: 0.09851301}
-      - {x: 0.19058944, y: 0.27835333}
-  m_UseDelaunayMesh: 1
+  ParticlesCollision: {fileID: 8817949153251142338}
+  Player: {fileID: 0}
 --- !u!1 &8868862019986292053
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +563,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.31764707, g: 0.9686275, b: 0.4666667, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

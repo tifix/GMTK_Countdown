@@ -97,6 +97,33 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SelectGem2",
+                    "type": "Button",
+                    "id": "13c7f259-0de0-4ff5-ab01-caca0e1ee90c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectGem3",
+                    "type": "Button",
+                    "id": "6c0198f3-ec3c-4811-a553-7f2dd790fe56",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectGem4",
+                    "type": "Button",
+                    "id": "52cec7b0-4964-4c27-84f2-3065a0cb137a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MousePosition",
                     "type": "Value",
                     "id": "441b28fa-8b76-4c70-baa4-ff3d1575e70d",
@@ -509,6 +536,39 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "SelectGem1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a81a9a9f-b476-4c7c-9d8c-3521d1930f4f",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SelectGem2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b72a94a-4b7f-459d-8129-d6a145e7e3a1",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SelectGem3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4152748d-ab23-44a9-b252-a3414de94749",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SelectGem4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

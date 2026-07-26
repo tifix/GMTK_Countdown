@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,11 +17,36 @@ public class GemAbstract : MonoBehaviour
     public float MouseFollowForce = 10;
     public float FollowStrengthMultiplier;
     public AnimationCurve MouseFollowFalloff;
+    public CinemachineImpulseSource CamShake;
+
+    public ParticleSystem ParticlesCollision;
+
+    public PlayerController Player;
 
     public virtual void Awake()
     {
         InputActionClick.Enable();
         InputActionMousePosition.Enable();
+        CamShake = GetComponent<CinemachineImpulseSource>();
+
+        Player = FindFirstObjectByType<PlayerController>(); //not really performant but we don't have 1000+ objects to iterate over so should be chill
+    }
+    public virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player")) 
+        {
+            Debug.Log("hit player. Collecting");
+            CamShake.StopAllCoroutines();
+            OnGemCollected();
+            Destroy(gameObject);
+            return;
+        }
+
+        ParticlesCollision.Play();
+    }
+    //stub to be overriden by subclasses
+    public virtual void OnGemCollected() 
+    {
     }
 
 

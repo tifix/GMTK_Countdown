@@ -14,24 +14,22 @@ public class GemExplosive : GemAbstract
 
     public bool isExploding = false;
     public float delayBeforeDespawn = 2f;
-    public ParticleSystem ParticlesCollision;
-    public CinemachineImpulseSource CamShake;
+    public ParticleSystem ExplosionFX;
 
-    //public GameObject GemPrefabA;
-    //public GameObject GemPrefabB;
-    //public GameObject GemPrefabC;
+
 
     public override void Awake()
     {
         base.Awake();
-        ParticlesCollision = GetComponentInChildren<ParticleSystem>();
-        CamShake = GetComponent<CinemachineImpulseSource>();
+        if(ParticlesCollision == null)
+        {
+            ParticlesCollision = GetComponentInChildren<ParticleSystem>();
+        }
+
         CamShake.enabled = false;
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
-        ParticlesCollision.Play();
-
         //if hitting with enough energy to explode - explode
         float ImpactVelocity = (collision.relativeVelocity).magnitude;
         Debug.Log(ImpactVelocity);
@@ -40,6 +38,21 @@ public class GemExplosive : GemAbstract
         {
             TriggerExplosion();
         }
+        else
+        {
+            base.OnCollisionEnter2D(collision);
+        }
+    }
+    public override void OnGemCollected()
+    {
+        Player.GemCountExplosive++;
+        base.OnGemCollected();
+
+        //handle tutorialisation
+        if (!Camera.main.GetComponent<GameController>().HasEverCollectedGemA)
+        {
+            Camera.main.GetComponent<GameController>().TutorialShowGemA();
+        }
     }
 
     public void TriggerExplosion() 
@@ -47,17 +60,18 @@ public class GemExplosive : GemAbstract
         StartCoroutine(ExplosionCoroutine());
     }
 
+
     public IEnumerator ExplosionCoroutine() 
     {
         isExploding = true;
         CamShake.enabled = true;
-
-        GetComponent<SpriteRenderer>().color = Color.white;
+        ExplosionFX.Play();
+        GetComponent<SpriteRenderer>().enabled = false;
 
         Collider2D[] HitsInRadius = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D ObjectHit in HitsInRadius)
         {
-            //Break blocks
+            //Break blocks - TODO refactor this from gem onto terrain itself
             if(ObjectHit is TilemapCollider2D) 
             {
                 Tilemap TileMap = ObjectHit.GetComponent<Tilemap>();
@@ -114,7 +128,13 @@ public class GemExplosive : GemAbstract
             }
             yield return null;
         }
-        //Show explosion VFX
+
+        //handle tutorialisation
+        if (!Camera.main.GetComponent<GameController>().HasUsedGemA)
+        {
+            Camera.main.GetComponent<GameController>().HasUsedGemA = true;
+        }
+
         yield return new WaitForSeconds(delayBeforeDespawn);
         Destroy(gameObject);
     }

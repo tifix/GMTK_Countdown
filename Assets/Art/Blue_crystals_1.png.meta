@@ -1,28 +1,34 @@
 fileFormatVersion: 2
-guid: c2a45942705542d4eb01ac632ff925af
+guid: 5d84832cb7b59fb48bec503a0aa3799d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2801905517198411582
-    second: Drac_sprites_0
+      213: 1443417430794388658
+    second: Blue_crystals_1_0
   - first:
-      213: -1200943642401763900
-    second: Drac_sprites_1
+      213: -666948553133827460
+    second: Blue_crystals_1_1
   - first:
-      213: 4017289349974111299
-    second: Drac_sprites_2
+      213: 381862179704380748
+    second: Blue_crystals_1_2
   - first:
-      213: -4745586067114990148
-    second: Drac_sprites_3
+      213: 1526126457130826300
+    second: Blue_crystals_1_3
   - first:
-      213: -3389954019302106909
-    second: Drac_sprites_4
+      213: -2917127418605541793
+    second: Blue_crystals_1_4
   - first:
-      213: -7493061232689825293
-    second: Drac_sprites_5
+      213: -6007063698384435761
+    second: Blue_crystals_1_5
   - first:
-      213: 5854791623510971523
-    second: Drac_sprites_6
+      213: 315331049069009764
+    second: Blue_crystals_1_6
+  - first:
+      213: -5521183283933774965
+    second: Blue_crystals_1_7
+  - first:
+      213: -3958598499163384480
+    second: Blue_crystals_1_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,199 +137,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DracMove1
+      name: Blue_crystals_1_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 47
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b44b19718c080410800000000000000
+      internalID: 1443417430794388658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 47
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a5ff613d58eb6f0800000000000000
+      internalID: -666948553133827460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 33
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d9f6611a5ac4500800000000000000
+      internalID: 381862179704380748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3abb9f4de3ed2510800000000000000
+      internalID: 1526126457130826300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 31
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56e67181184487d0800000000000000
+      internalID: -2917127418605541793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 15
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5c6a2a46f92aca0800000000000000
+      internalID: -6007063698384435761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 15
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bd86e1be7406400800000000000000
+      internalID: 315331049069009764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_crystals_1_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3781d6093e52e620800000000000000
-      internalID: 2801905517198411582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracMove2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 15
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4cd016fbe14655fe0800000000000000
-      internalID: -1200943642401763900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracMove3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 344ba29116740c730800000000000000
-      internalID: 4017289349974111299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb5619a7d9a442eb0800000000000000
-      internalID: -4745586067114990148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
         width: 17
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e8179ab7c674f0d0800000000000000
-      internalID: -3389954019302106909
+      spriteID: b8b7d454e01d063b0800000000000000
+      internalID: -5521183283933774965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drac_Dash1
+      name: Blue_crystals_1_8
       rect:
         serializedVersion: 2
-        x: 96
+        x: 17
         y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f9b541428c430890800000000000000
-      internalID: -7493061232689825293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Drac_Dash3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 384dd4926f5604150800000000000000
-      internalID: 5854791623510971523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown3
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5538cf502a0c4c48a75b15ef19da3a4
-      internalID: -690461403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Drac_Dash2
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcd98b6b6e78ba74b8d5a0eb5924f483
-      internalID: 575941053
+      spriteID: 065d8f873ab3019c0800000000000000
+      internalID: -3958598499163384480
       vertices: []
       indices: 
       edges: []
@@ -332,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9f60fd1b9c0ea4a4da19df92ac274f74
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -342,15 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DracDown1: -4745586067114990148
-      DracDown2: -3389954019302106909
-      DracDown3: -690461403
-      DracMove1: 2801905517198411582
-      DracMove2: -1200943642401763900
-      DracMove3: 4017289349974111299
-      Drac_Dash1: -7493061232689825293
-      Drac_Dash2: 575941053
-      Drac_Dash3: 5854791623510971523
+      Blue_crystals_1_0: 1443417430794388658
+      Blue_crystals_1_1: -666948553133827460
+      Blue_crystals_1_2: 381862179704380748
+      Blue_crystals_1_3: 1526126457130826300
+      Blue_crystals_1_4: -2917127418605541793
+      Blue_crystals_1_5: -6007063698384435761
+      Blue_crystals_1_6: 315331049069009764
+      Blue_crystals_1_7: -5521183283933774965
+      Blue_crystals_1_8: -3958598499163384480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

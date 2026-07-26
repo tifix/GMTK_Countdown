@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: c2a45942705542d4eb01ac632ff925af
+guid: aca047594b407884b851ea8a384bcf2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2801905517198411582
-    second: Drac_sprites_0
+      213: -3109167674840109536
+    second: Drac_ui_0
   - first:
-      213: -1200943642401763900
-    second: Drac_sprites_1
+      213: 7236738470686352990
+    second: Drac_ui_1
   - first:
-      213: 4017289349974111299
-    second: Drac_sprites_2
+      213: 1761346206621712674
+    second: Drac_ui_2
   - first:
-      213: -4745586067114990148
-    second: Drac_sprites_3
+      213: -2296134054287238012
+    second: Drac_ui_3
   - first:
-      213: -3389954019302106909
-    second: Drac_sprites_4
+      213: -3831015452005408992
+    second: Drac_ui_4
   - first:
-      213: -7493061232689825293
-    second: Drac_sprites_5
-  - first:
-      213: 5854791623510971523
-    second: Drac_sprites_6
+      213: -1074605466205998186
+    second: Drac_ui_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,199 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DracMove1
+      name: Drac_ui_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e270a09740ad4d0800000000000000
+      internalID: -3109167674840109536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_ui_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56e9a51c4f0e6460800000000000000
+      internalID: 7236738470686352990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_ui_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 33
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2214b2cfa0f817810800000000000000
+      internalID: 1761346206621712674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_ui_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 16
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c18893e3e7220e0800000000000000
+      internalID: -2296134054287238012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_ui_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 49
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3781d6093e52e620800000000000000
-      internalID: 2801905517198411582
+      spriteID: 02f5f267ebf75dac0800000000000000
+      internalID: -3831015452005408992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DracMove2
+      name: Drac_ui_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 49
         y: 0
-        width: 15
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 49
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cd016fbe14655fe0800000000000000
-      internalID: -1200943642401763900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracMove3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 344ba29116740c730800000000000000
-      internalID: 4017289349974111299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb5619a7d9a442eb0800000000000000
-      internalID: -4745586067114990148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 17
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e8179ab7c674f0d0800000000000000
-      internalID: -3389954019302106909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Drac_Dash1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f9b541428c430890800000000000000
-      internalID: -7493061232689825293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Drac_Dash3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 384dd4926f5604150800000000000000
-      internalID: 5854791623510971523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DracDown3
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5538cf502a0c4c48a75b15ef19da3a4
-      internalID: -690461403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Drac_Dash2
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcd98b6b6e78ba74b8d5a0eb5924f483
-      internalID: 575941053
+      spriteID: 6933911a50c3611f0800000000000000
+      internalID: -1074605466205998186
       vertices: []
       indices: 
       edges: []
@@ -332,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9f60fd1b9c0ea4a4da19df92ac274f74
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -342,15 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DracDown1: -4745586067114990148
-      DracDown2: -3389954019302106909
-      DracDown3: -690461403
-      DracMove1: 2801905517198411582
-      DracMove2: -1200943642401763900
-      DracMove3: 4017289349974111299
-      Drac_Dash1: -7493061232689825293
-      Drac_Dash2: 575941053
-      Drac_Dash3: 5854791623510971523
+      Drac_ui_0: -3109167674840109536
+      Drac_ui_1: 7236738470686352990
+      Drac_ui_2: 1761346206621712674
+      Drac_ui_3: -2296134054287238012
+      Drac_ui_4: -3831015452005408992
+      Drac_ui_5: -1074605466205998186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
