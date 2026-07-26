@@ -180,8 +180,8 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 28
+        width: 15
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,7 +203,7 @@ TextureImporter:
         x: 48
         y: 0
         width: 16
-        height: 25
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +224,8 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 17
-        height: 21
+        width: 15
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +247,7 @@ TextureImporter:
         x: 96
         y: 0
         width: 16
-        height: 28
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: DracDown3
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 0
-        width: 15
-        height: 16
+        width: 16
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +313,7 @@ TextureImporter:
         x: 112
         y: 0
         width: 16
-        height: 28
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,6 +324,50 @@ TextureImporter:
       bones: []
       spriteID: dcd98b6b6e78ba74b8d5a0eb5924f483
       internalID: 575941053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_sprites_0
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb62251b2292564bb9c54005857f91c
+      internalID: -1888091928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drac_sprites_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6769d26af43174bbfeab972d0173d8
+      internalID: -837913510
       vertices: []
       indices: 
       edges: []
@@ -351,6 +395,8 @@ TextureImporter:
       Drac_Dash1: -7493061232689825293
       Drac_Dash2: 575941053
       Drac_Dash3: 5854791623510971523
+      Drac_sprites_0: -1888091928
+      Drac_sprites_1: -837913510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
