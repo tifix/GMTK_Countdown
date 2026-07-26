@@ -129,10 +129,11 @@ public class GemExplosive : GemAbstract
             yield return null;
         }
 
-        //handle tutorialisation
-        if (!Camera.main.GetComponent<GameController>().HasUsedGemA)
+        //handle tutorialisation - complete
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasUsedGemA && GC.HasEverCollectedGemA)
         {
-            Camera.main.GetComponent<GameController>().HasUsedGemA = true;
+            GC.HasUsedGemA = true;
         }
 
         yield return new WaitForSeconds(delayBeforeDespawn);

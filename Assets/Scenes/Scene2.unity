@@ -2179,7 +2179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1072257878}
   - component: {fileID: 1072257880}
-  - component: {fileID: 1072257881}
   m_Layer: 0
   m_Name: Panel_Tutorial
   m_TagString: Untagged
@@ -2221,18 +2220,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072257877}
   m_CullTransparentMesh: 1
---- !u!225 &1072257881
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072257877}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1074632215
 GameObject:
   m_ObjectHideFlags: 0

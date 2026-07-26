@@ -8,9 +8,10 @@ public class GemUpload : GemAbstract
         Player.GemCountUpload++;
 
         //handle tutorialisation
-        if (!Camera.main.GetComponent<GameController>().HasEverCollectedGemD)
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasEverCollectedGemD)
         {
-            Camera.main.GetComponent<GameController>().TutorialShowGemD();
+            GC.TutorialShowGemD();
         }
     }
 }

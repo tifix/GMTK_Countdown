@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [Header("Balancing parameters")]
     [Range(0,100),Tooltip("force applied when jumping")]
     public float JumpAcceleration = 20.0f;
+    [Range(0, 100), Tooltip("force applied when dashing")]
+    public float DashAcceleration = 20.0f;
     [Range(500, 2000), Tooltip("force applied when jumping")]
     public float MoveAcceleration = 20.0f;
 
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public InputActionAsset InputActions;
     private InputAction InputActionMove;
     private InputAction InputActionJump;
+    private InputAction InputActionDash;
     private InputAction InputActionSelectGemExplosive;  //1st
     private InputAction InputActionSelectGemDash;       //2nd
     private InputAction InputActionSelectGemReveal;     //3rd
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("TBA")]
     private Vector2 RawMoveInput;
     public float RawJumpInput;
+    public float LastMoveInput = 0;
 
 
     [Header("Cached components")]
@@ -67,6 +71,7 @@ public class PlayerController : MonoBehaviour
         //fetch new move sys input actions
         InputActionMove = InputSystem.actions.FindAction("Move");
         InputActionJump = InputSystem.actions.FindAction("Jump");
+        InputActionDash = InputSystem.actions.FindAction("Dash");
         InputActionSelectGemExplosive = InputSystem.actions.FindAction("SelectGem1");
         InputActionSelectGemDash = InputSystem.actions.FindAction("SelectGem2");
         InputActionSelectGemReveal = InputSystem.actions.FindAction("SelectGem3");
@@ -111,13 +116,20 @@ public class PlayerController : MonoBehaviour
                 Controller.HasEverUsedJump = true;
             }
         }
+        //Dash handling
+        if(InputActionDash.WasPressedThisDynamicUpdate() && GemCountDash > 0) 
+        {
+            GemCountDash--;
+            Dash();
+        }
 
         //sideways move handling
         if (RawMoveInput.x < 0)
         {
             Rigidbody.AddForce(Vector2.left * MoveAcceleration* Time.deltaTime);
             Anim.SetFloat("Movement", RawMoveInput.x);
-            Anim.SetFloat("MovementLast", RawMoveInput.x);
+            LastMoveInput = RawMoveInput.x;
+            Anim.SetFloat("MovementLast", LastMoveInput);
 
             //handle tutorialisation
             if (!Controller.HasEverUsedMove)
@@ -130,7 +142,8 @@ public class PlayerController : MonoBehaviour
         {
             Rigidbody.AddForce(Vector2.right * MoveAcceleration * Time.deltaTime);
             Anim.SetFloat("Movement", RawMoveInput.x);
-            Anim.SetFloat("MovementLast", RawMoveInput.x);
+            LastMoveInput = RawMoveInput.x;
+            Anim.SetFloat("MovementLast", LastMoveInput);
 
             //handle tutorialisation
             if (!Controller.HasEverUsedMove)
@@ -141,6 +154,10 @@ public class PlayerController : MonoBehaviour
         }
         Anim.SetFloat("Movement", 0);
 
+    }
+    public void Dash()
+    {
+        Rigidbody.AddForce(Vector2.right * LastMoveInput * DashAcceleration, ForceMode2D.Impulse);
     }
 
     public void Debug_GrantGems() 

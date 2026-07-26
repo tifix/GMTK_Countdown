@@ -8,9 +8,10 @@ public class GemDash : GemAbstract
         Player.GemCountDash++;
 
         //handle tutorialisation
-        if (!Camera.main.GetComponent<GameController>().HasEverCollectedGemA)
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasEverCollectedGemB)
         {
-            Camera.main.GetComponent<GameController>().TutorialShowGemB();
+            GC.TutorialShowGemB();
         }
     }
 }

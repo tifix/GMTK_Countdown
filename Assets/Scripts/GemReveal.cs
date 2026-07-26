@@ -30,9 +30,10 @@ public class GemReveal : GemAbstract
         Player.GemCountReveal++;
 
         //handle tutorialisation
-        if (!Camera.main.GetComponent<GameController>().HasEverCollectedGemC)
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasEverCollectedGemC)
         {
-            Camera.main.GetComponent<GameController>().TutorialShowGemC();
+            GC.TutorialShowGemC();
         }
     }
 }
