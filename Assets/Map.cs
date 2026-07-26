@@ -8,11 +8,23 @@ namespace Assets
     public enum Direction {South,Noth,West,East}
     internal class Map
     {
+        public Map(int _width, int _height) 
+        {
+            width = _width; 
+            height = _height; 
+        }
+
         public int width = 200;
         public int height = 500;
+        public int wallDepth = 20;
         public bool[] tiles;
 
         public float[] weights;
+
+        public float GemFrequency = 0.05f;
+        public float SurfaceGemFrequency = 0.1f;
+
+        public float openingWidth = 20;
 
         public void Generate(float scale)
         {
@@ -87,40 +99,51 @@ namespace Assets
             return Direction.South;
         }
 
-        public void UpdateTilemap(Tilemap surfaceTilemap, Tilemap gemsTilemap, TileBase tileBase, TileBase gemTileExplosive, TileBase gemTileUpload, TileBase gemTileSurfaceReveal)
+
+
+        public void UpdateTilemap(Tilemap surfaceTilemap, Tilemap gemsTilemap, DictEntry[] Dictionary) //, TileBase tileBase, TileBase gemTileExplosive, TileBase gemTileUpload, TileBase gemTileSurfaceReveal
         {
+            TileBase tileBase = TilemapGen.EnumToData(TileType.plain, Dictionary);
             surfaceTilemap.ClearAllTiles();
             gemsTilemap.ClearAllTiles();
 
-            int wallDepth = 20;
 
             for (int x = -wallDepth; x < width + wallDepth; x++)
             {
                 for (int y = -wallDepth; y < height + wallDepth; y++)
                 {
+                    //Generate opening at the top
+                    if (y > height - wallDepth && x > (width - openingWidth) / 2 && x < (width + openingWidth) / 2)
+                    {
+                        //tiles[x + y * width] = false;
+                        continue;
+                    }
+
                     if (OnOrBeyondMapEdge(x, y)) {
                         surfaceTilemap.SetTile(new Vector3Int(x, y), tileBase);
                     }
                     else if (GetTile(x, y))
                     {
                         surfaceTilemap.SetTile(new Vector3Int(x, y), tileBase);
-                        if (UnityEngine.Random.value > 0.95)
+                        if (UnityEngine.Random.value < GemFrequency)
                         {
-                            //spawn explosive gems at the surface
-                            if (IsTouchingAir(x, y))
+
+                            //Randomise which of the gems to spawn
+                            TileBase gemToSpawn = new TileBase[]
                             {
-                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTileExplosive);
+                                TilemapGen.EnumToData(TileType.gemExplosive, Dictionary),
+                                TilemapGen.EnumToData(TileType.gemUpload, Dictionary),
+                                TilemapGen.EnumToData(TileType.gemReveal, Dictionary)
                             }
-                            else
-                            {
-                                gemsTilemap.SetTile(new Vector3Int(x, y), gemTileUpload);
-                            }
+                            [UnityEngine.Random.Range(0, 3)];
+
+                            gemsTilemap.SetTile(new Vector3Int(x, y), gemToSpawn);                           
                         }
                     }
                     else
                     {
                         //if this is an edge, Spawn surface crystal
-                        if (IsTouchingGround(x, y) && UnityEngine.Random.value > 0.90)
+                        if (IsTouchingGround(x, y) && UnityEngine.Random.value < SurfaceGemFrequency)
                         {
                             //determine how to rotate the crystal so it connects to the ground
                             var tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 90));
@@ -130,37 +153,40 @@ namespace Assets
                                 case Direction.South:
                                     {
                                         tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 0));
-                                        Debug.Log("south");
                                         break;
                                     }
                                 //if terrain above, flip vertically
                                 case Direction.Noth:
                                     {
                                         tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 180));
-                                        Debug.Log("north");
                                         break;
                                     }
                                 //if terrain to the left, rotate
                                 case Direction.West:
                                     {
                                         tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, -90));
-                                        Debug.Log("west");
                                         break;
                                     }
                                 //if terrain to the left, rotate
                                 case Direction.East:
                                     {
                                         tileTransform = Matrix4x4.Rotate(Quaternion.Euler(0, 0, 90));
-                                        Debug.Log("east");
                                         break;
                                     }
                             }
+                            //Randomise which of the gems to spawn
+                            TileBase gemToSpawn = new TileBase[] 
+                            { 
+                                TilemapGen.EnumToData(TileType.gemExplosiveSurface, Dictionary), 
+                                TilemapGen.EnumToData(TileType.gemDashSurface, Dictionary) 
+                            }
+                            [UnityEngine.Random.Range(0,2)];
 
                             //create the transform struct using the rotations determined
                             var tileChangeData = new TileChangeData
                             {
                                 position = new Vector3Int(x, y),
-                                tile = gemTileSurfaceReveal,
+                                tile = gemToSpawn,
                                 color = Color.white,
                                 transform = tileTransform
                             };

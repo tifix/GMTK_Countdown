@@ -71,37 +71,10 @@ public class GemExplosive : GemAbstract
         Collider2D[] HitsInRadius = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D ObjectHit in HitsInRadius)
         {
-            //Break blocks - TODO refactor this from gem onto terrain itself
-            if(ObjectHit is TilemapCollider2D) 
+            if(ObjectHit is TilemapCollider2D)
             {
-                Tilemap TileMap = ObjectHit.GetComponent<Tilemap>();
                 TilemapGen MapData = ObjectHit.transform.parent.GetComponent<TilemapGen>();
-                GridLayout gridLayout = ObjectHit.GetComponentInParent<GridLayout>();
-
-                //create a bounds struct to check within - TODO: update to circle not square checker
-                Vector3 BoundsMiddle = transform.position - Vector3Int.one * Mathf.FloorToInt(explosionRadius / 2);
-                var cellBounds = new BoundsInt(
-                gridLayout.WorldToCell(BoundsMiddle),Vector3Int.one * Mathf.FloorToInt(explosionRadius));
-
-                //check all tiles within the bounds
-                foreach (var cell in cellBounds.allPositionsWithin)
-                {
-                    if (TileMap.HasTile(cell))
-                    {
-                        //get tile data, check if it's special, if it is, spawn a gem from prefab
-                        TileBase tileDestroyed = TileMap.GetTile(cell);
-                        Debug.Log("cell of type "+ tileDestroyed.name+ " exploded!");
-                        foreach(var TilePrefab in MapData.TileDictionary) 
-                        {
-                            if(tileDestroyed == TilePrefab.TileData && TilePrefab.SpawnOnDestroyed != null) 
-                            {
-                                Instantiate(TilePrefab.SpawnOnDestroyed, gridLayout.CellToWorld(cell), Quaternion.identity);
-                            }
-                        }
-
-                        TileMap.SetTile(cell, null);
-                    }
-                }                
+                MapData.BreakTiles((TilemapCollider2D)ObjectHit,transform.position,explosionRadius);                         
             }
 
             //trigger other gems

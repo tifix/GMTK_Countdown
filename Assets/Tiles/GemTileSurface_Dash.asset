@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: GemTileSurface_Dash
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
-  m_DefaultSprite: {fileID: 1051098006503083580, guid: af978e8c0657bfb4698b5158800691bf, type: 3}
+  m_DefaultSprite: {fileID: -879487864802120473, guid: 4ea5abb4c320691479973f8fb3a6f48d, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 2
     m_Sprites:
-    - {fileID: -8075803088092765882, guid: af978e8c0657bfb4698b5158800691bf, type: 3}
-    - {fileID: 1051098006503083580, guid: af978e8c0657bfb4698b5158800691bf, type: 3}
-    - {fileID: 7377880850331151161, guid: af978e8c0657bfb4698b5158800691bf, type: 3}
-    - {fileID: 5318282399991768915, guid: af978e8c0657bfb4698b5158800691bf, type: 3}
+    - {fileID: -7523515402237349997, guid: f1847c2bb59668549829f979872ce16e, type: 3}
+    - {fileID: 6160559686904996107, guid: f1847c2bb59668549829f979872ce16e, type: 3}
+    - {fileID: 3595188058116094735, guid: f1847c2bb59668549829f979872ce16e, type: 3}
+    - {fileID: 3486966605276588762, guid: f1847c2bb59668549829f979872ce16e, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
