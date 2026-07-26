@@ -9,6 +9,13 @@ public class GameController : MonoBehaviour
     public bool isShowingTutorialMovement = true;
 
     public int score = 0;
+    public int GemScoreExplosive = 2;
+    public int GemScoreDash = 5;
+    public int GemScoreReveal = 20;
+    public int GemScoreUpload = 100;
+    public float GemScoreTickInterval = 0.05f;
+    public float GemScoreScaleMultiplier = 1.05f;
+    public float CounterMaxSize = 2.5f;
 
     [Range(0,1500)]
     public float timeLeft = 900;  //900 => 15mins in seconds
@@ -67,6 +74,59 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("GAME OVER");
     }
+
+    public void GemsToScore()
+    {
+        StartCoroutine(ProcessGemScoring());
+    }
+
+    public IEnumerator ProcessGemScoring() 
+    {
+        int cachedNumberA = Player.GemCountExplosive;
+        int cachedNumberB = Player.GemCountDash;
+        int cachedNumberC = Player.GemCountReveal;
+        int cachedNumberD = Player.GemCountUpload;
+        Vector3 CounterBaseSize = CounterScore.rectTransform.localScale;
+
+        for (int i = 0; i < cachedNumberA; i++)
+        {
+            Player.GemCountExplosive--;
+            score += GemScoreExplosive;
+            CounterScore.text = score.ToString();
+            CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
+            CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
+            yield return new WaitForSeconds(GemScoreTickInterval);
+        }
+        for (int i = 0; i < cachedNumberB; i++)
+        {
+            Player.GemCountDash--;
+            score += GemScoreDash;
+            CounterScore.text = score.ToString();
+            CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
+            CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
+            yield return new WaitForSeconds(GemScoreTickInterval);
+        }
+        for (int i = 0; i < cachedNumberC; i++)
+        {
+            Player.GemCountReveal--;
+            score += GemScoreReveal;
+            CounterScore.text = score.ToString();
+            CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
+            CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
+            yield return new WaitForSeconds(GemScoreTickInterval);
+        }
+        for (int i = 0; i < cachedNumberD; i++)
+        {
+            Player.GemCountUpload--;
+            score += GemScoreUpload;
+            CounterScore.text = score.ToString();
+            CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
+            CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
+            yield return new WaitForSeconds(GemScoreTickInterval);
+        }
+        CounterScore.rectTransform.localScale = CounterBaseSize;
+    }
+
 
     public IEnumerator AwaitInputForTutorialMovement() 
     {

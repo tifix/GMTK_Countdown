@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class GemAbstract : MonoBehaviour
 {
     [Header("Generic properties")]
-    public int ScoreValue = 5;
     public bool isDragged = false;
     public InputAction InputActionClick;
     public InputAction InputActionMousePosition;

@@ -6,10 +6,10 @@ public class GemReveal : GemAbstract
 
     [Header("Reveal properties")]
     public float Radius = 100;
-    public float Duration = 60;
+    public float Duration = 3.0f;
 
     public bool EffectActive = false;
-    public void StartReveal() 
+/*    public void StartReveal() 
     {
         StartCoroutine(ProcessReveal());
     }
@@ -23,17 +23,14 @@ public class GemReveal : GemAbstract
         }
         EffectActive = true;
         yield return new WaitForSeconds(Duration);
-    }
+    }*/
+
     public override void OnGemCollected()
     {
         base.OnGemCollected();
         Player.GemCountReveal++;
-
-        //handle tutorialisation
-        GameController GC = Camera.main.GetComponent<GameController>();
-        if (!GC.HasEverCollectedGemC)
-        {
-            GC.TutorialShowGemC();
-        }
+        Player.ShowRevealTutorial();
     }
+
+
 }

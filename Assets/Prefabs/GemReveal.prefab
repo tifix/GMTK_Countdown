@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5635d48f459ef04484b6925fc3f5c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemReveal
-  ScoreValue: 5
   isDragged: 0
   InputActionClick:
     m_Name: Input Action Click
@@ -333,10 +332,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  CamShake: {fileID: 0}
   ParticlesCollision: {fileID: 8817949153251142338}
   Player: {fileID: 0}
   Radius: 100
-  Duration: 60
+  Duration: 3
   EffectActive: 0
 --- !u!1 &8868862019986292053
 GameObject:

@@ -337,7 +337,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1576245859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 160
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1184,6 +1184,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   isShowingTutorialMovement: 1
   score: 0
+  GemScoreExplosive: 2
+  GemScoreDash: 5
+  GemScoreReveal: 20
+  GemScoreUpload: 100
+  GemScoreTickInterval: 0.1
+  GemScoreScaleMultiplier: 0.05
+  CounterMaxSize: 2.5
   timeLeft: 900
   Player: {fileID: 2139436445}
   DebugWindowParent: {fileID: 30246299}
@@ -2135,9 +2142,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[E] to use a
+  m_Text: 'this gem is useless
 
-    revealing gem'
+    but highly valuable'
 --- !u!222 &926452115
 CanvasRenderer:
   m_ObjectHideFlags: 0

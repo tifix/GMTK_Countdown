@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D),typeof(Collider2D))]
 public class PlayerController : MonoBehaviour
@@ -8,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Current status")]
     [SerializeField, Tooltip("Uused to prevent jump-stacking")]
     private bool IsGrounded = false;
+    public float TimeUploadHeld = 0;
 
     [Header("Balancing parameters")]
     [Range(0,100),Tooltip("force applied when jumping")]
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private InputAction InputActionMove;
     private InputAction InputActionJump;
     private InputAction InputActionDash;
+    private InputAction InputActionUpload;
     private InputAction InputActionSelectGemExplosive;  //1st
     private InputAction InputActionSelectGemDash;       //2nd
     private InputAction InputActionSelectGemReveal;     //3rd
@@ -47,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public int GemCountReveal = 0;
     public int GemCountUpload = 0;
 
+
     [Header("Prefabs")]
     [SerializeField, Tooltip("used for summoning a gem if present in inventory")]
     private GameObject PrefabGemExplosive;
@@ -58,6 +63,8 @@ public class PlayerController : MonoBehaviour
     private GameObject PrefabGemUpload;
     [SerializeField, Tooltip("DEBUG; used for spawning for testing")]
     private Transform GemSpawnLocation;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -72,6 +79,7 @@ public class PlayerController : MonoBehaviour
         InputActionMove = InputSystem.actions.FindAction("Move");
         InputActionJump = InputSystem.actions.FindAction("Jump");
         InputActionDash = InputSystem.actions.FindAction("Dash");
+        InputActionUpload = InputSystem.actions.FindAction("Upload");
         InputActionSelectGemExplosive = InputSystem.actions.FindAction("SelectGem1");
         InputActionSelectGemDash = InputSystem.actions.FindAction("SelectGem2");
         InputActionSelectGemReveal = InputSystem.actions.FindAction("SelectGem3");
@@ -122,6 +130,24 @@ public class PlayerController : MonoBehaviour
             GemCountDash--;
             Dash();
         }
+        if (InputActionUpload.WasPressedThisDynamicUpdate()) 
+        {
+            TimeUploadHeld += Time.deltaTime;
+        }
+        if(InputActionUpload.WasReleasedThisDynamicUpdate() && GemCountUpload > 0) 
+        {
+            GemCountUpload--;
+            TimeUploadHeld = -1;
+            Controller.GemsToScore();
+
+            //handle tutorialisation
+            GameController GC = Camera.main.GetComponent<GameController>();
+            if (!GC.HasUsedGemD && GC.HasEverCollectedGemD)
+            {
+                GC.HasUsedGemD = true;
+            }
+        }
+
 
         //sideways move handling
         if (RawMoveInput.x < 0)
@@ -158,7 +184,15 @@ public class PlayerController : MonoBehaviour
     public void Dash()
     {
         Rigidbody.AddForce(Vector2.right * LastMoveInput * DashAcceleration, ForceMode2D.Impulse);
+
+        //handle tutorialisation
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasUsedGemB && GC.HasEverCollectedGemB)
+        {
+            GC.HasUsedGemB = true;
+        }
     }
+
 
     public void Debug_GrantGems() 
     {
@@ -197,5 +231,27 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+    }
+
+    public void ShowRevealTutorial()
+    {
+        //handle tutorialisation
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasEverCollectedGemC)
+        {
+            GC.TutorialShowGemC();
+        }
+        StartCoroutine(HideTutorialGemReveal());
+    }
+    public IEnumerator HideTutorialGemReveal()
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("Hiding");
+        //handle tutorialisation
+        GameController GC = Camera.main.GetComponent<GameController>();
+        if (!GC.HasUsedGemC && GC.HasEverCollectedGemC)
+        {
+            GC.HasUsedGemC = true;
+        }
     }
 }
