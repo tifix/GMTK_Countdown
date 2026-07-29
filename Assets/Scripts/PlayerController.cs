@@ -3,6 +3,8 @@ using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.Tilemaps;
+using UnityEditor.U2D.Aseprite;
 
 [RequireComponent(typeof(Rigidbody2D),typeof(Collider2D))]
 public class PlayerController : MonoBehaviour
@@ -10,16 +12,18 @@ public class PlayerController : MonoBehaviour
     [Header("Current status")]
     [SerializeField, Tooltip("Uused to prevent jump-stacking")]
     private bool IsGrounded = false;
-    public float TimeUploadHeld = 0;
 
     [Header("Balancing parameters")]
     [Range(0,100),Tooltip("force applied when jumping")]
     public float JumpAcceleration = 20.0f;
     [Range(0, 100), Tooltip("force applied when dashing")]
     public float DashAcceleration = 20.0f;
+    public float DashTrailDuration = 0.25f;
     [Range(500, 2000), Tooltip("force applied when jumping")]
     public float MoveAcceleration = 20.0f;
 
+    public float breakGemThreshhold = 3;
+    public float breakGemRadius = 3f;
 
     //Input handling//////////////////////////
     public InputActionAsset InputActions;
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("Used for animating player sprite")]
     private Animator Anim;
     public GameController Controller;
+    public ParticleSystem DashTrail;
 
     public int GemCountExplosive = 0;
     public int GemCountDash = 0;
@@ -96,13 +101,39 @@ public class PlayerController : MonoBehaviour
         InputActions.FindActionMap("Player").Disable();
     }
 
-    // Update is called once per frame
-    void Update()//Fixed
+    void Update()
     {
         InputToMovement();
         InputToGemSelect();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
+
+        Collider2D ObjectHit = collision.collider;
+        if (ObjectHit is TilemapCollider2D)
+        {
+            Tilemap TileMap = ObjectHit.GetComponent<Tilemap>();
+            TilemapGen TMG = ObjectHit.GetComponentInParent<TilemapGen>();
+            GridLayout GridLayout = TMG.GetComponent<GridLayout>();
+            Vector3Int TileLocation = GridLayout.WorldToCell(collision.GetContact(0).point);
+            TileBase TileHit = TileMap.GetTile(TileLocation);
+            if(TileHit == null)
+            {
+                Debug.Log("Hitting nothing");
+                return;
+            }
+            if( TileHit == TilemapGen.EnumToData(TileType.gemExplosiveSurface, TMG.TileDictionary) ||
+                TileHit == TilemapGen.EnumToData(TileType.gemDashSurface, TMG.TileDictionary) ||
+                TileHit == TilemapGen.EnumToData(TileType.gemRevealSurface, TMG.TileDictionary)
+                ) 
+            {
+                Debug.Log("Hitting GEMS");
+                TMG.BreakTileAtPosition(TileLocation, TileMap);
+            }
+        }  
+    }
 
     //from key presses to moving the player character
     void InputToMovement()
@@ -130,15 +161,18 @@ public class PlayerController : MonoBehaviour
             GemCountDash--;
             Dash();
         }
-        if (InputActionUpload.WasPressedThisDynamicUpdate()) 
+        if (InputActionUpload.WasPressedThisDynamicUpdate() && GemCountUpload > 0) 
         {
-            TimeUploadHeld += Time.deltaTime;
-        }
-        if(InputActionUpload.WasReleasedThisDynamicUpdate() && GemCountUpload > 0) 
-        {
+            if (!Controller.isGemScoringNow)
+            {
+                Controller.GemsToScore();
+            }
             GemCountUpload--;
-            TimeUploadHeld = -1;
-            Controller.GemsToScore();
+        }
+        if(InputActionUpload.WasReleasedThisDynamicUpdate()) 
+        {
+            Controller.TimeUploadHeld = 0;
+            Controller.isGemScoringNow = false;
 
             //handle tutorialisation
             GameController GC = Camera.main.GetComponent<GameController>();
@@ -183,6 +217,9 @@ public class PlayerController : MonoBehaviour
     }
     public void Dash()
     {
+        DashTrail.transform.localScale = new Vector3(LastMoveInput, 1, 1);
+        DashTrail.Play();
+        Invoke("HideDashTrail", DashTrailDuration);
         Rigidbody.AddForce(Vector2.right * LastMoveInput * DashAcceleration, ForceMode2D.Impulse);
 
         //handle tutorialisation
@@ -191,6 +228,10 @@ public class PlayerController : MonoBehaviour
         {
             GC.HasUsedGemB = true;
         }
+    }
+    public void HideDashTrail() 
+    {
+        DashTrail.Stop();
     }
 
 

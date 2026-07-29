@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 using Assets;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public enum TileType { plain, gemExplosive, gemUpload, gemReveal, gemDash, gemExplosiveSurface, gemDashSurface, gemRevealSurface }
 //way to organise tiles, fetch them. Like a dictionary but not necessarily limited to key-value pairs
@@ -111,21 +112,27 @@ public class TilemapGen : MonoBehaviour
         //check all tiles within the bounds
         foreach (var cell in cellBounds.allPositionsWithin)
         {
-            if (TileMap.HasTile(cell))
-            {
-                //get tile data, check if it's special, if it is, spawn a gem from prefab
-                TileBase tileDestroyed = TileMap.GetTile(cell);
-                Debug.Log("cell of type " + tileDestroyed.name + " exploded!");
-                foreach (var TilePrefab in TileDictionary)
-                {
-                    if (tileDestroyed == TilePrefab.TileData && TilePrefab.SpawnOnDestroyed != null)
-                    {
-                        Instantiate(TilePrefab.SpawnOnDestroyed, gridLayout.CellToWorld(cell), Quaternion.identity);
-                    }
-                }
+            BreakTileAtPosition(cell, TileMap);         
+        }
+    }
+    public void BreakTileAtPosition(Vector3Int position, Tilemap TileMap)
+    {
+        GridLayout gridLayout = GetComponent<GridLayout>();
 
-                TileMap.SetTile(cell, null);
+        if (TileMap.HasTile(position))
+        {
+            //get tile data, check if it's special, if it is, spawn a gem from prefab
+            TileBase tileDestroyed = TileMap.GetTile(position);
+            Debug.Log("cell of type " + tileDestroyed.name + " exploded!");
+            foreach (var TilePrefab in TileDictionary)
+            {
+                if (tileDestroyed == TilePrefab.TileData && TilePrefab.SpawnOnDestroyed != null)
+                {
+                    Instantiate(TilePrefab.SpawnOnDestroyed, gridLayout.CellToWorld(position), Quaternion.identity);
+                }
             }
+
+            TileMap.SetTile(position, null);
         }
     }
 }

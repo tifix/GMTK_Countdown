@@ -1,19 +1,26 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public bool isShowingTutorialMovement = true;
+    public bool isShowingGameOver = false;
 
     public int score = 0;
     public int GemScoreExplosive = 2;
-    public int GemScoreDash = 5;
-    public int GemScoreReveal = 20;
-    public int GemScoreUpload = 100;
-    public float GemScoreTickInterval = 0.05f;
+    public int GemScoreDash = 7;
+    public int GemScoreReveal = 200;
+    public int GemScoreUpload = 50;
+    public bool isGemScoringNow = false;
+    public float TimeUploadHeld = 0;
+    public float GemScoreTickInterval = 0.2f;
+    public AnimationCurve GemScoreTickIntervalMultiplier;
+
     public float GemScoreScaleMultiplier = 1.05f;
     public float CounterMaxSize = 2.5f;
 
@@ -50,6 +57,11 @@ public class GameController : MonoBehaviour
                 public bool HasUsedGemD = false;
 
 
+    public void SkipIntro() 
+    {
+        animator.Play("TutorialMoveIn", 0);
+    }
+
     private void Start()
     {
         StartCoroutine(AwaitInputForTutorialMovement());
@@ -62,7 +74,7 @@ public class GameController : MonoBehaviour
             timeLeft -= Time.deltaTime;
             timeLeft = Mathf.Clamp(timeLeft, 0, 6039);   //99min:99sec
         }
-        else
+        else if(!isShowingGameOver)
         {
             EndGameOnTimeOut();
         }
@@ -70,9 +82,18 @@ public class GameController : MonoBehaviour
         UpdateCounters();
     }
 
+
     public void EndGameOnTimeOut() 
     {
+        isShowingGameOver = true;
         Debug.Log("GAME OVER");
+        animator.SetTrigger("BadEnding");
+        Invoke("RestartGame", 30);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void GemsToScore()
@@ -80,14 +101,15 @@ public class GameController : MonoBehaviour
         StartCoroutine(ProcessGemScoring());
     }
 
-    public IEnumerator ProcessGemScoring() 
+    public IEnumerator ProcessGemScoring()
     {
+        isGemScoringNow = true;
         int cachedNumberA = Player.GemCountExplosive;
         int cachedNumberB = Player.GemCountDash;
         int cachedNumberC = Player.GemCountReveal;
-        int cachedNumberD = Player.GemCountUpload;
+        int cachedNumberD = Player.GemCountUpload-1;
         Vector3 CounterBaseSize = CounterScore.rectTransform.localScale;
-
+        float GemTickCompoundInterval;
         for (int i = 0; i < cachedNumberA; i++)
         {
             Player.GemCountExplosive--;
@@ -95,7 +117,13 @@ public class GameController : MonoBehaviour
             CounterScore.text = score.ToString();
             CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
             CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
-            yield return new WaitForSeconds(GemScoreTickInterval);
+            GemTickCompoundInterval = GemScoreTickInterval * GemScoreTickIntervalMultiplier.Evaluate(TimeUploadHeld);
+            yield return new WaitForSeconds(GemTickCompoundInterval);
+            TimeUploadHeld += GemTickCompoundInterval;
+            if (!isGemScoringNow)
+            {
+                break;
+            }
         }
         for (int i = 0; i < cachedNumberB; i++)
         {
@@ -104,7 +132,13 @@ public class GameController : MonoBehaviour
             CounterScore.text = score.ToString();
             CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
             CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
-            yield return new WaitForSeconds(GemScoreTickInterval);
+            GemTickCompoundInterval = GemScoreTickInterval * GemScoreTickIntervalMultiplier.Evaluate(TimeUploadHeld);
+            yield return new WaitForSeconds(GemTickCompoundInterval);
+            TimeUploadHeld += GemTickCompoundInterval;
+            if (!isGemScoringNow)
+            {
+                break;
+            }
         }
         for (int i = 0; i < cachedNumberC; i++)
         {
@@ -113,7 +147,13 @@ public class GameController : MonoBehaviour
             CounterScore.text = score.ToString();
             CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
             CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
-            yield return new WaitForSeconds(GemScoreTickInterval);
+            GemTickCompoundInterval = GemScoreTickInterval * GemScoreTickIntervalMultiplier.Evaluate(TimeUploadHeld);
+            yield return new WaitForSeconds(GemTickCompoundInterval);
+            TimeUploadHeld += GemTickCompoundInterval;
+            if (!isGemScoringNow)
+            {
+                break;
+            }
         }
         for (int i = 0; i < cachedNumberD; i++)
         {
@@ -122,8 +162,15 @@ public class GameController : MonoBehaviour
             CounterScore.text = score.ToString();
             CounterScore.rectTransform.localScale += Vector3.one * GemScoreScaleMultiplier;
             CounterScore.rectTransform.localScale = Vector3.ClampMagnitude(CounterScore.rectTransform.localScale, CounterMaxSize);
-            yield return new WaitForSeconds(GemScoreTickInterval);
+            GemTickCompoundInterval = GemScoreTickInterval * GemScoreTickIntervalMultiplier.Evaluate(TimeUploadHeld);
+            yield return new WaitForSeconds(GemTickCompoundInterval);
+            TimeUploadHeld += GemTickCompoundInterval;
+            if (!isGemScoringNow) 
+            {
+                break;
+            }
         }
+        isGemScoringNow = false;
         CounterScore.rectTransform.localScale = CounterBaseSize;
     }
 

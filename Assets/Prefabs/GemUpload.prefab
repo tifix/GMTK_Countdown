@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 234699065416845115}
   - component: {fileID: 7995809842244117564}
   - component: {fileID: 1713632039204501215}
-  - component: {fileID: 2282934934704390654}
   - component: {fileID: 8039115808883371852}
+  - component: {fileID: 8298733156085022004}
   m_Layer: 0
   m_Name: GemUpload
   m_TagString: Gem
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 64aa47cf890d26643acdb0b1061e9796, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6174978147087254119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
   m_Name: 
@@ -183,61 +183,6 @@ MonoBehaviour:
   UseImpactDirection: 0
   ScaleImpactWithMass: 0
   ScaleImpactWithSpeed: 0
---- !u!60 &2282934934704390654
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6174978147087254119}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.25, y: 0.5}
-      - {x: -0.375, y: 0.375}
-      - {x: -0.375, y: -0.375}
-      - {x: -0.25, y: -0.5}
-      - {x: 0.25, y: -0.5}
-      - {x: 0.375, y: -0.375}
-      - {x: 0.375, y: 0.375}
-      - {x: 0.25, y: 0.5}
-  m_UseDelaunayMesh: 1
 --- !u!114 &8039115808883371852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b162763201ed18478329d0c077c2216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemUpload
-  ScoreValue: 5
   isDragged: 0
   InputActionClick:
     m_Name: Input Action Click
@@ -287,7 +231,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   mousePos: {x: 0, y: 0}
-  Collider: {fileID: 2282934934704390654}
+  Collider: {fileID: 8298733156085022004}
   Rigidbody: {fileID: 7995809842244117564}
   MouseFollowForce: 1500
   FollowStrengthMultiplier: 0
@@ -333,8 +277,46 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  CamShake: {fileID: 0}
   ParticlesCollision: {fileID: 8817949153251142338}
   Player: {fileID: 0}
+--- !u!70 &8298733156085022004
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174978147087254119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.75, y: 1}
+  m_Direction: 0
 --- !u!1 &8868862019986292053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1351,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1380,22 +1362,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
           value: 1
-          inSlope: 1
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4

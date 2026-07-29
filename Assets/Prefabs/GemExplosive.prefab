@@ -4937,7 +4937,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -5928,7 +5928,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -5939,22 +5939,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
           value: 1
-          inSlope: 1
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -9897,7 +9897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5060ea9743435d84fb20e6f252f426e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemExplosive
-  ScoreValue: 5
   isDragged: 0
   InputActionClick:
     m_Name: Input Action Click
@@ -9980,13 +9979,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  CamShake: {fileID: 8458327788206343606}
   ParticlesCollision: {fileID: 8244066955101130196}
+  Player: {fileID: 0}
   explosionForce: 500
   explosionRadius: 3
   explosionThreshhold: 5
   isExploding: 0
   delayBeforeDespawn: 0.25
-  CamShake: {fileID: 8458327788206343606}
   ExplosionFX: {fileID: 3466601623439067144}
 --- !u!50 &4712859946970167443
 Rigidbody2D:
@@ -10004,7 +10004,7 @@ Rigidbody2D:
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 64aa47cf890d26643acdb0b1061e9796, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -10,6 +10,7 @@ public class GemAbstract : MonoBehaviour
     public InputAction InputActionClick;
     public InputAction InputActionMousePosition;
     public Vector2 mousePos = Vector2.zero;
+    public float ImpactForHitParticleThreshhold = 1.0f;
 
     public Collider2D Collider;
     public Rigidbody2D Rigidbody;
@@ -37,11 +38,17 @@ public class GemAbstract : MonoBehaviour
             Debug.Log("hit player. Collecting");
             CamShake.StopAllCoroutines();
             OnGemCollected();
+            if (ParticlesCollision != null)
+            {
+                ParticlesCollision.transform.SetParent(null);
+            }
             Destroy(gameObject);
             return;
         }
-
-        ParticlesCollision.Play();
+        if(collision.relativeVelocity.magnitude > ImpactForHitParticleThreshhold)
+        {
+            ParticlesCollision.Play();
+        }
     }
     //stub to be overriden by subclasses
     public virtual void OnGemCollected() 

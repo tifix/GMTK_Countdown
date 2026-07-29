@@ -34,7 +34,7 @@ public class GemExplosive : GemAbstract
         float ImpactVelocity = (collision.relativeVelocity).magnitude;
         Debug.Log(ImpactVelocity);
 
-        if (ImpactVelocity > explosionThreshhold)
+        if (ImpactVelocity > explosionThreshhold && !collision.gameObject.CompareTag("Player"))
         {
             TriggerExplosion();
         }
@@ -71,6 +71,11 @@ public class GemExplosive : GemAbstract
         Collider2D[] HitsInRadius = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D ObjectHit in HitsInRadius)
         {
+            //if the object has been destroyed already
+            if (!ObjectHit.gameObject) 
+            {
+                continue;
+            }
             if(ObjectHit is TilemapCollider2D)
             {
                 TilemapGen MapData = ObjectHit.transform.parent.GetComponent<TilemapGen>();
